@@ -1,20 +1,20 @@
 {
-  "name": "vue-components-starter",
-  "version": "0.0.0",
+  "name": "rehookify-datepicker-vue",
+  "version": "0.1.0-beta.1",
   "packageManager": "pnpm@10.13.1",
-  "description": "A starter for creating a Vue component library.",
+  "description": "rehookify datepicker library for Vue 3",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/sxzz/vue-components-starter#readme",
+  "homepage": "https://github.com/oxwazz/rehookify-datepicker-vue#readme",
   "bugs": {
-    "url": "https://github.com/sxzz/vue-components-starter/issues"
+    "url": "https://github.com/oxwazz/rehookify-datepicker-vue/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxzz/vue-components-starter.git"
+    "url": "git+https://github.com/oxwazz/rehookify-datepicker-vue.git"
   },
-  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
-  "funding": "https://github.com/sponsors/sxzz",
+  "author": "Muhammad Rahmahalim <muhammad.rahmahalim@gmail.com>",
+  "funding": "https://github.com/sponsors/oxwazz",
   "files": [
     "dist"
   ],
@@ -44,8 +44,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.0.6",
-    "@sxzz/prettier-config": "^2.2.3",
+    "@antfu/eslint-config": "^4.17.0",
     "@types/node": "^22.16.5",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/test-utils": "^2.4.6",
@@ -60,6 +59,5 @@
     "vitest": "^3.2.4",
     "vue": "^3.5.17",
     "vue-tsc": "^3.0.3"
-  },
-  "prettier": "@sxzz/prettier-config"
+  }
 }
