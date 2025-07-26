@@ -1,43 +1,43 @@
-# vue-components-starter [![npm](https://img.shields.io/npm/v/vue-components-starter.svg)](https://npmjs.com/package/vue-components-starter)
+# Customer IDP Admin App
 
-[![Unit Test](https://github.com/sxzz/vue-components-starter/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/vue-components-starter/actions/workflows/unit-test.yml)
+## Prerequisites
 
-A starter for creating a Vue component library.
+- GitHub account with [ssh access](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+- Node.js v22.17.0 or install latest [mise-en-place](https://mise.jdx.dev/installing-mise.html) or [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+- Pnpm v10.13.1 via `corepack enable`
+- [pre-commit](https://pre-commit.com/#install) latest version
+- Install all vscode extensions in [.vscode/extensions.json](./.vscode/extensions.json)
 
-## Development
+## Installation
 
-- Install dependencies:
+1. Clone the repository:
 
-```bash
-pnpm install
-```
+   ```bash
+   git clone git@github.com:oxwazz/rehookify_datepicker_vue.git
+   ```
 
-- Run the playground:
+1. Install Dependencies:
 
-```bash
-pnpm play
-```
+   ```bash
+   pnpm install
+   ```
 
-- Run the unit tests:
+1. Install the git hook scripts:
 
-```bash
-pnpm test
-```
+   ```bash
+   pre-commit install
+   ```
 
-- Build the library:
+   and then,
 
-```bash
-pnpm build
-```
+   ```bash
+   pre-commit install --hook-type commit-msg
+   ```
 
-## Sponsors
+1. Run the playground:
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
+   ```bash
+   pnpm play # or nr play
+   ```
 
-## License
-
-[MIT](./LICENSE) License © 2025 [三咲智子 Kevin Deng](https://github.com/sxzz)
+done 🎉

@@ -7,13 +7,13 @@ import {
   getStartExactPosition,
 } from '../utils/get-current-year-position'
 
-describe('getStartDecadePosition', () => {
+describe('getStartDecadePosition 1', () => {
   it('should return year before current decade', () => {
     expect(getStartDecadePosition(2022)).toBe(2019)
   })
 })
 
-describe('getStartDecadePosition', () => {
+describe('getStartDecadePosition 2', () => {
   it('should return centered position', () => {
     expect(getFluidYearPosition(2022, 12)).toBe(2017)
   })

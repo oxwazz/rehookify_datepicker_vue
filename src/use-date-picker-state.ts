@@ -15,7 +15,7 @@ export function useDatePickerState(config: DPUserConfig): DPStateRef {
   const offsetYear = ref<DPReducerState['offsetYear']>(initState.offsetYear)
 
   watch(offsetDate, (v) => {
-    console.log(3333123, 'offsetDate.value masok', v)
+    console.warn(3333123, 'offsetDate.value masok', v)
   })
 
   return {

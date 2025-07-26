@@ -1,30 +1,30 @@
 {
   "name": "rehookify-datepicker-vue",
+  "type": "module",
   "version": "0.1.0-beta.1",
   "packageManager": "pnpm@10.13.1",
-  "description": "rehookify datepicker library for Vue 3",
-  "type": "module",
+  "description": "rehookify datepicker for vue 3",
+  "a33uthor": "Muhammad Rahmahalim <muhammad.rahmahalim@gmail.com>",
   "license": "MIT",
+  "funding": "https://github.com/sponsors/oxwazz",
   "homepage": "https://github.com/oxwazz/rehookify-datepicker-vue#readme",
-  "bugs": {
-    "url": "https://github.com/oxwazz/rehookify-datepicker-vue/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oxwazz/rehookify-datepicker-vue.git"
   },
-  "author": "Muhammad Rahmahalim <muhammad.rahmahalim@gmail.com>",
-  "funding": "https://github.com/sponsors/oxwazz",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/oxwazz/rehookify-datepicker-vue/issues"
+  },
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -36,28 +36,33 @@
     "play": "vite",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
-    "format": "prettier --cache --write .",
     "release": "bumpp && pnpm publish",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "bump-deps:check-minor": "taze",
+    "bump-deps:check-major": "taze major",
+    "bump-deps:write-minor": "taze -w",
+    "bump-deps:write-major": "taze major -w"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.17.0",
-    "@types/node": "^22.16.5",
+    "@antfu/eslint-config": "^4.18.0",
+    "@antfu/ni": "^25.0.0",
+    "@types/node": "^24.1.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^10.2.0",
     "eslint": "^9.31.0",
     "happy-dom": "^18.0.1",
     "prettier": "^3.6.2",
-    "tsdown": "^0.12.9",
+    "taze": "^19.1.0",
+    "tsdown": "^0.13.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vite": "^7.0.5",
     "vitest": "^3.2.4",
-    "vue": "^3.5.17",
+    "vue": "^3.5.18",
     "vue-tsc": "^3.0.3"
   }
 }

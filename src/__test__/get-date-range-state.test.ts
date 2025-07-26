@@ -34,7 +34,7 @@ describe('getDateRangeState', () => {
     )
   })
 
-  it('should return empty string', () => {
+  it('should return empty string 1', () => {
     const d1 = newDate(2022, 10, 18)
     expect(getDateRangeState(d1, null, selectedDates1, 'range')).toBe('')
 
@@ -88,7 +88,7 @@ describe('getDateRangeState', () => {
     )
   })
 
-  it('should return empty string', () => {
+  it('should return empty string 2', () => {
     const rangeEnd = newDate(2022, 20, 22)
     const d1 = newDate(2022, 20, 18) // smaller than selectedDates2[0]
     const d2 = newDate(2022, 20, 24) // bigger than rangeEnd;

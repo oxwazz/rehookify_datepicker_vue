@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.17.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+  #   - repo: https://github.com/pre-commit/pre-commit-hooks
+  #     rev: v5.0.0
+  #     hooks:
+  #       - id: no-commit-to-branch
+  #         args: [--branch, master, --branch, main, --branch, development, --branch, dev]
+  - repo: local
+    hooks:
+      - id: eslint-check
+        name: eslint-check
+        language: system
+        entry: pnpm lint
+        pass_filenames: false
