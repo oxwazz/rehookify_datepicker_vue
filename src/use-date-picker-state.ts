@@ -1,10 +1,10 @@
-import type { DPReducerState, DPStateRef, DPUserConfig } from './types'
+import type { DPReducerState, DPStateRef, DPUserConfigRef } from './types'
 import { ref, watch } from 'vue'
 // import { stateReducer } from './state-reducer'
 import { createConfig } from './utils/config'
 import { createInitialState } from './utils/create-initial-state'
 
-export function useDatePickerState(config: DPUserConfig): DPStateRef {
+export function useDatePickerState(config: DPUserConfigRef): DPStateRef {
   const dpConfig = createConfig(config)
 
   const initState = createInitialState(dpConfig)

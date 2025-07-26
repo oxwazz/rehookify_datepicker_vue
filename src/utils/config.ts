@@ -5,7 +5,7 @@ import type {
   DPDatesMode,
   DPLocaleConfig,
   DPTimeConfig,
-  DPUserConfig,
+  DPUserConfigRef,
   DPYearsConfig,
 } from '../types'
 import { getCleanDate, sortDatesAsc, sortMinMax } from './date'
@@ -65,7 +65,7 @@ export function createConfig({
   time = {},
   exclude = {},
   years,
-}: DPUserConfig): DPConfig {
+}: DPUserConfigRef): DPConfig {
   const { minDate, maxDate, ...restDates } = dates
   const { offsets = [], ...restCalendarParams } = calendar
   const { minTime, maxTime, ...restTime } = time

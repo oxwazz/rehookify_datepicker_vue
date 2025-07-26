@@ -1,3 +1,4 @@
+import type { Ref } from 'vue'
 import type { DPDateExclude, DPDatesMode } from './date'
 import type { DPDayInteger } from './day'
 import type { DPTimeLimit } from './time'
@@ -67,13 +68,27 @@ export interface DPUserConfig {
   years?: Partial<DPYearsConfig>
 }
 
+export interface DPUserConfigRef {
+  calendar?: Partial<DPCalendarConfig>
+  dates?: Partial<DPDatesConfig>
+  exclude?: DPExcludeConfig
+  focusDate?: Date
+  locale?: Partial<DPLocaleConfig>
+  offsetDate?: Ref<Date>
+  onOffsetChange?: (d: Date) => void
+  onDatesChange: (d: Date[]) => void
+  selectedDates: Date[]
+  time?: Partial<DPTimeConfig>
+  years?: Partial<DPYearsConfig>
+}
+
 export interface DPConfig {
   calendar: DPCalendarConfig
   dates: DPDatesConfig
   exclude?: DPExcludeConfig
   focusDate?: Date
   locale: DPLocaleConfig
-  offsetDate?: Date
+  offsetDate?: Ref<Date>
   onOffsetChange?: (d: Date) => void
   onDatesChange: (d: Date[]) => void
   selectedDates: Date[]
