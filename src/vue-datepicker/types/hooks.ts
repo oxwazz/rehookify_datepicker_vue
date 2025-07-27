@@ -6,35 +6,35 @@ import type {
   DPOffsetValue,
   DPPropGetter,
   DPPropsGetterConfig,
-  DPStateRef,
   DPTime,
   DPUserConfig,
   DPYear,
 } from '../../datepicker-core/types'
+import type { DPState } from './state'
 
-export type DPUseCalendars = (state: DPStateRef) => ComputedRef<{
+export type DPUseCalendars = (state: DPState) => ComputedRef<{
   calendars: DPCalendar[]
   weekDays: string[]
 }>
 
-export type DPUseDays = (state: DPStateRef) => ComputedRef<{
+export type DPUseDays = (state: DPState) => ComputedRef<{
   selectedDates: Date[]
   formattedDates: string[]
 }>
 
-export type DPUseDaysPropGetters = (state: DPStateRef) => {
+export type DPUseDaysPropGetters = (state: DPState) => {
   dayButton: (day: DPDay, config?: DPPropsGetterConfig) => DPPropGetter
 }
 
-export type DPUseMonths = (state: DPStateRef) => ComputedRef<{
+export type DPUseMonths = (state: DPState) => ComputedRef<{
   months: DPMonth[]
 }>
 
-export type DPUseMonthsPropGetters = (state: DPStateRef) => {
+export type DPUseMonthsPropGetters = (state: DPState) => {
   monthButton: (month: DPMonth, config?: DPPropsGetterConfig) => DPPropGetter
 }
 
-export type DPUseDatePickerOffsetPropGetters = (state: DPStateRef) => {
+export type DPUseDatePickerOffsetPropGetters = (state: DPState) => {
   addOffset: (
     offsetValue: DPOffsetValue,
     config?: DPPropsGetterConfig,
@@ -46,19 +46,19 @@ export type DPUseDatePickerOffsetPropGetters = (state: DPStateRef) => {
   ) => DPPropGetter
 }
 
-export type DPUseTime = (state: DPStateRef) => ComputedRef<{
+export type DPUseTime = (state: DPState) => ComputedRef<{
   time: DPTime[]
 }>
 
-export type DPUseTimePropGetter = (state: DPStateRef) => {
+export type DPUseTimePropGetter = (state: DPState) => {
   timeButton: (time: DPTime, config?: DPPropsGetterConfig) => DPPropGetter
 }
 
-export type DPUseYears = (state: DPStateRef) => ComputedRef<{
+export type DPUseYears = (state: DPState) => ComputedRef<{
   years: DPYear[]
 }>
 
-export type DPUseYearsPropGetters = (state: DPStateRef) => {
+export type DPUseYearsPropGetters = (state: DPState) => {
   yearButton: (year: DPYear, config?: DPPropsGetterConfig) => DPPropGetter
   nextYearsButton: (config?: DPPropsGetterConfig) => DPPropGetter
   previousYearsButton: (config?: DPPropsGetterConfig) => DPPropGetter

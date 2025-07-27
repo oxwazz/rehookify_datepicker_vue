@@ -15,11 +15,16 @@ describe('useMonths', () => {
 
     const {
       selectedDates,
-      state: { offsetDate },
+      state,
       config: { locale, dates },
     } = stateResult
 
-    const months = createMonths(offsetDate.value, selectedDates, locale, dates)
+    const months = createMonths(
+      state.value.offsetDate,
+      selectedDates,
+      locale,
+      dates,
+    )
 
     expect(monthResult.value.months).toEqual(months)
   })
@@ -39,7 +44,7 @@ describe('useMonthPropGetters', () => {
     )
 
     onClick?.()
-    expect(stateResult.state.offsetDate.value.getMonth()).toEqual(
+    expect(stateResult.state.value.offsetDate.getMonth()).toEqual(
       monthResult.value.months[0].$date.getMonth(),
     )
   })

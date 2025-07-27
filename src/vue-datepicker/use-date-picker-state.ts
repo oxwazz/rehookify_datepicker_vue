@@ -1,11 +1,12 @@
-import type { DPReducerState, DPStateRef } from '../datepicker-core/types'
+import type { DPReducerState } from '../datepicker-core/types'
 import type { DPUserConfig } from './types/config'
-import { computed, ref, unref } from 'vue'
+import type { DPState } from './types/state'
+import { computed, readonly, ref, unref } from 'vue'
 // import { stateReducer } from './state-reducer'
 import { createConfig } from '../datepicker-core/utils/config'
 import { createInitialState } from '../datepicker-core/utils/create-initial-state'
 
-export function useDatePickerState(config: DPUserConfig): DPStateRef {
+export function useDatePickerState(config: DPUserConfig): DPState {
   const dpConfig = computed(() => createConfig({
     ...config,
     offsetDate: unref(config.offsetDate),
@@ -13,24 +14,23 @@ export function useDatePickerState(config: DPUserConfig): DPStateRef {
 
   const initState = createInitialState(dpConfig.value)
 
-  const focusDate = ref<DPReducerState['focusDate']>(initState.focusDate)
-  const offsetDate = ref<DPReducerState['offsetDate']>(initState.offsetDate)
-  const rangeEnd = ref<DPReducerState['rangeEnd']>(initState.rangeEnd)
-  const offsetYear = ref<DPReducerState['offsetYear']>(initState.offsetYear)
-
-  // watch(offsetDate, (v) => {
-  //   console.warn(3333123, 'offsetDate.value masok', v)
-  // })
+  const state = ref<{
+    focusDate: DPReducerState['focusDate']
+    offsetDate: DPReducerState['offsetDate']
+    rangeEnd: DPReducerState['rangeEnd']
+    offsetYear: DPReducerState['offsetYear']
+  }>({
+    focusDate: initState.focusDate,
+    offsetDate: initState.offsetDate,
+    rangeEnd: initState.rangeEnd,
+    offsetYear: initState.offsetYear,
+  })
 
   return {
+    dispatch: state,
     selectedDates: dpConfig.value.selectedDates,
-    offsetDate: computed(() => dpConfig.value.offsetDate || offsetDate.value),
-    state: {
-      focusDate,
-      offsetDate,
-      rangeEnd,
-      offsetYear,
-    },
+    offsetDate: computed(() => dpConfig.value.offsetDate || state.value.offsetDate),
+    state: readonly(state),
     config: dpConfig.value,
   }
 }

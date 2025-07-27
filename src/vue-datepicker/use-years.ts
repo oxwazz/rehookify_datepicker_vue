@@ -17,18 +17,18 @@ import { setYear } from './state-reducer'
 export const useYears: DPUseYears = ({
   selectedDates,
   offsetDate,
-  state: { offsetYear },
+  state,
   config: { years, dates },
 }) => {
   return computed(() => ({
-    years: createYears(toValue(offsetYear), toValue(offsetDate), selectedDates, years, dates),
+    years: createYears(state.value.offsetYear, toValue(offsetDate), selectedDates, years, dates),
   }))
 }
 
 export const useYearsPropGetters: DPUseYearsPropGetters = (dpState) => {
   const {
     offsetDate,
-    state: { offsetYear },
+    state,
     config: { dates, years: yearsConfig },
   } = dpState
   const { minDate, maxDate } = dates
@@ -50,7 +50,7 @@ export const useYearsPropGetters: DPUseYearsPropGetters = (dpState) => {
     )
 
   const nextYearsButton = ({ onClick, disabled, ...rest }: DPPropsGetterConfig = {}) => {
-    const endYearDate = newDate(toValue(offsetYear) + toValue(numberOfYears) - 1, M, D)
+    const endYearDate = newDate(state.value.offsetYear + toValue(numberOfYears) - 1, M, D)
     const isDisabled
         = !!disabled
           || maxDateAndAfter(maxDate, endYearDate)
@@ -61,7 +61,7 @@ export const useYearsPropGetters: DPUseYearsPropGetters = (dpState) => {
       evt =>
         callAll(
           onClick,
-          skipAll(() => setYear(toValue(offsetYear) + step)),
+          skipAll(() => setYear(state.value.offsetYear + step)),
         )(evt),
       rest,
     )
@@ -69,14 +69,14 @@ export const useYearsPropGetters: DPUseYearsPropGetters = (dpState) => {
 
   const previousYearsButton = ({ onClick, disabled, ...rest }: DPPropsGetterConfig = {}) => {
     const isDisabled
-        = !!disabled || minDateAndBefore(minDate, newDate(toValue(offsetYear), M, D))
+        = !!disabled || minDateAndBefore(minDate, newDate(state.value.offsetYear, M, D))
 
     return createPropGetter(
       isDisabled,
       evt =>
         callAll(
           onClick,
-          skipAll(() => setYear(toValue(offsetYear) - step)),
+          skipAll(() => setYear(state.value.offsetYear - step)),
         )(evt),
       rest,
     )

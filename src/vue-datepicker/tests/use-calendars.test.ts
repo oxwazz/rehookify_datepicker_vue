@@ -16,10 +16,10 @@ describe('useCalendars', () => {
       selectedDates: stateResult.selectedDates,
       offsetDate: unref(stateResult.offsetDate),
       state: {
-        focusDate: unref(stateResult.state.focusDate),
-        offsetDate: unref(stateResult.state.offsetDate),
-        offsetYear: unref(stateResult.state.offsetYear),
-        rangeEnd: unref(stateResult.state.rangeEnd),
+        focusDate: unref(stateResult.state.value.focusDate),
+        offsetDate: unref(stateResult.state.value.offsetDate),
+        offsetYear: unref(stateResult.state.value.offsetYear),
+        rangeEnd: unref(stateResult.state.value.rangeEnd),
       },
       config: stateResult.config,
     })

@@ -10,14 +10,14 @@ describe('useYears', () => {
 
     const {
       selectedDates,
-      state: { offsetDate, offsetYear },
+      state,
       config,
     } = stateResult
     const { years, dates } = config
 
     const calendarYears = createYears(
-      offsetYear.value,
-      offsetDate.value,
+      state.value.offsetYear,
+      state.value.offsetDate,
       selectedDates,
       years,
       dates,
@@ -39,7 +39,7 @@ describe('useYearsPropGetters', () => {
     )
 
     onClick?.()
-    expect(stateResult.state.offsetDate.value.getFullYear()).toEqual(
+    expect(stateResult.state.value.offsetDate.getFullYear()).toEqual(
       nextYear,
     )
   })

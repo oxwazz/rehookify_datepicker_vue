@@ -4,21 +4,21 @@ import type {
   DPUseTime,
   DPUseTimePropGetter,
 } from '../datepicker-core/types'
-import { computed, toValue } from 'vue'
+import { computed } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { createPropGetter } from '../datepicker-core/utils/create-prop-getter'
 import { createTime } from '../datepicker-core/utils/create-time'
 import { isSame } from '../datepicker-core/utils/predicates'
 import { setFocus } from './state-reducer'
 
-export const useTime: DPUseTime = ({ state: { focusDate }, config }) =>
+export const useTime: DPUseTime = ({ state, config }) =>
   computed(() => ({
-    time: createTime(toValue(focusDate), config),
+    time: createTime(state.value.focusDate, config),
   }))
 
 export const useTimePropGetter: DPUseTimePropGetter = ({
   selectedDates,
-  state: { focusDate },
+  state,
   config: { onDatesChange },
 }) => {
   const timeButton = (
@@ -34,7 +34,7 @@ export const useTimePropGetter: DPUseTimePropGetter = ({
           onClick,
           skipFirst((d: Date) => {
             const newSelected = selectedDates.map((selected) => {
-              return isSame(toValue(focusDate) as Date, selected) ? d : selected
+              return isSame(state.value.focusDate as Date, selected) ? d : selected
             })
             setFocus(d)
             onDatesChange(newSelected)

@@ -13,11 +13,11 @@ describe('useDatePickerState', () => {
     })
 
     expect({
-      ...result.state,
-      focusDate: result.state.focusDate.value,
-      offsetDate: result.state.offsetDate.value,
-      offsetYear: result.state.offsetYear.value,
-      rangeEnd: result.state.rangeEnd.value,
+      ...result.state.value,
+      focusDate: result.state.value.focusDate,
+      offsetDate: result.state.value.offsetDate,
+      offsetYear: result.state.value.offsetYear,
+      rangeEnd: result.state.value.rangeEnd,
     }).toEqual(INITIAL_STATE)
   })
 

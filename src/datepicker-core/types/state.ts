@@ -8,13 +8,6 @@ export interface DPReducerState {
   offsetYear: number
 }
 
-export interface DPReducerStateRef {
-  focusDate: Ref<Date | undefined>
-  rangeEnd: Ref<Date | null>
-  offsetDate: Ref<Date>
-  offsetYear: Ref<number>
-}
-
 export interface DPSetFocusDate {
   type: 'SET_FOCUS_DATE'
   date: DPReducerState['focusDate']
@@ -49,7 +42,8 @@ export interface DPState {
 }
 
 export interface DPStateRef {
-  state: DPReducerStateRef
+  dispatch: Ref<DPReducerState>
+  state: Readonly<Ref<DPReducerState>>
   selectedDates: Date[]
   offsetDate: ComputedRef<Date>
   config: DPConfig

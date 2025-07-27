@@ -7,10 +7,10 @@ export const useCalendars: DPUseCalendars = (state) => {
   const calendars = createCalendars({
     selectedDates: state.selectedDates,
     state: {
-      offsetDate: toValue(state.state.offsetDate),
-      focusDate: toValue(state.state.focusDate),
-      offsetYear: toValue(state.state.offsetYear),
-      rangeEnd: toValue(state.state.rangeEnd),
+      offsetDate: state.state.value.offsetDate,
+      focusDate: state.state.value.focusDate,
+      offsetYear: state.state.value.offsetYear,
+      rangeEnd: state.state.value.rangeEnd,
     },
     config: state.config,
     offsetDate: toValue(state.offsetDate),
