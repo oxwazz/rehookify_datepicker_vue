@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
+import { unref } from 'vue'
 import { createCalendars } from '../../datepicker-core/utils/create-calendars'
 import { createWeekdays } from '../../datepicker-core/utils/create-weekdays'
 import { useCalendars } from '../use-calendars'
@@ -13,12 +14,12 @@ describe('useCalendars', () => {
 
     const calendars = createCalendars({
       selectedDates: stateResult.selectedDates,
-      offsetDate: stateResult.offsetDate.value,
+      offsetDate: unref(stateResult.offsetDate),
       state: {
-        focusDate: stateResult.state.focusDate.value,
-        offsetDate: stateResult.state.offsetDate.value,
-        offsetYear: stateResult.state.offsetYear.value,
-        rangeEnd: stateResult.state.rangeEnd.value,
+        focusDate: unref(stateResult.state.focusDate),
+        offsetDate: unref(stateResult.state.offsetDate),
+        offsetYear: unref(stateResult.state.offsetYear),
+        rangeEnd: unref(stateResult.state.rangeEnd),
       },
       config: stateResult.config,
     })

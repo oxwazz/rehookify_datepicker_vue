@@ -1,4 +1,4 @@
-import type { DPUseCalendars } from './types'
+import type { DPUseCalendars } from '../datepicker-core/types'
 import { computed, toValue } from 'vue'
 import { createCalendars } from '../datepicker-core/utils/create-calendars'
 import { createWeekdays } from '../datepicker-core/utils/create-weekdays'

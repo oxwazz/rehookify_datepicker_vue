@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { ref } from 'vue'
+import { ref, unref } from 'vue'
 import { getCleanDate, newDate } from '../../datepicker-core/utils/date'
 import { setDPOffset } from '../../datepicker-core/utils/offset'
 import { INITIAL_STATE } from '../mocks/initial-state'
@@ -76,7 +76,7 @@ describe('useDatePickerState', () => {
       })
 
       setDPOffset(result)(d)
-      expect(result.offsetDate.value).toEqual(d)
+      expect(unref(result.offsetDate)).toEqual(d)
     })
 
     it('should set offset with onOffsetChange', () => {

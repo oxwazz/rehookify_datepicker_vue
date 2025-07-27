@@ -1,4 +1,4 @@
-import type { DPConfig, DPTime } from '../../vue-datepicker/types'
+import type { DPConfig, DPTime } from '../types'
 import {
   formatLocaleTime,
   formatTime,

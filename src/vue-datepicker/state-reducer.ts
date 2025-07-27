@@ -1,6 +1,6 @@
 import type {
   DPReducerState,
-} from './types'
+} from '../datepicker-core/types'
 import { inject } from 'vue'
 import { DateKey } from './install'
 

@@ -4,7 +4,7 @@ import type {
   DPDay,
   DPReducerState,
   DPState,
-} from '../../vue-datepicker/types'
+} from '../types'
 import {
   addToDate,
   formatMonthName,

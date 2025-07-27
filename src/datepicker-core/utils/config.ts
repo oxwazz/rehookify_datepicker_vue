@@ -7,7 +7,7 @@ import type {
   DPTimeConfig,
   DPUserConfig,
   DPYearsConfig,
-} from '../../vue-datepicker/types'
+} from '../types'
 import { getCleanDate, sortDatesAsc, sortMinMax } from './date'
 import { includeDate } from './predicates'
 

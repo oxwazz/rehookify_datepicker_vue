@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { ComputedRef, Ref } from 'vue'
 import type { DPConfig } from './config'
 
 export interface DPReducerState {
@@ -51,6 +51,6 @@ export interface DPState {
 export interface DPStateRef {
   state: DPReducerStateRef
   selectedDates: Date[]
-  offsetDate: Ref<Date>
+  offsetDate: ComputedRef<Date>
   config: DPConfig
 }

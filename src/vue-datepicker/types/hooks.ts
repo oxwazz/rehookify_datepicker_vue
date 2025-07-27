@@ -1,13 +1,16 @@
 import type { ComputedRef } from 'vue'
-import type { DPCalendar } from './calendar'
-import type { DPUserConfig } from './config'
-import type { DPDay } from './day'
-import type { DPMonth } from './month'
-import type { DPOffsetValue } from './offset'
-import type { DPPropGetter, DPPropsGetterConfig } from './prop-getters'
-import type { DPStateRef } from './state'
-import type { DPTime } from './time'
-import type { DPYear } from './year'
+import type {
+  DPCalendar,
+  DPDay,
+  DPMonth,
+  DPOffsetValue,
+  DPPropGetter,
+  DPPropsGetterConfig,
+  DPStateRef,
+  DPTime,
+  DPUserConfig,
+  DPYear,
+} from '../../datepicker-core/types'
 
 export type DPUseCalendars = (state: DPStateRef) => ComputedRef<{
   calendars: DPCalendar[]

@@ -1,4 +1,4 @@
-import type { DPYearsConfig, DPYearsMode } from '../../vue-datepicker/types'
+import type { DPYearsConfig, DPYearsMode } from '../types'
 
 /*
  * Default behavior years collection

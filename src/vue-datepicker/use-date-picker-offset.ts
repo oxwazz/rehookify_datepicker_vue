@@ -2,7 +2,7 @@ import type {
   DPOffsetValue,
   DPPropsGetterConfig,
   DPUseDatePickerOffsetPropGetters,
-} from './types'
+} from '../datepicker-core/types'
 
 import { toValue } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'

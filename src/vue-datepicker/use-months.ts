@@ -3,7 +3,7 @@ import type {
   DPPropsGetterConfig,
   DPUseMonths,
   DPUseMonthsPropGetters,
-} from './types'
+} from '../datepicker-core/types'
 
 import { computed, toValue } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'

@@ -1,4 +1,4 @@
-import type { DPLocaleConfig } from '../types'
+import type { DPLocaleConfig } from '../../datepicker-core/types'
 
 export const ALTERNATIVE_LOCALE_CONFIG: DPLocaleConfig = {
   day: '2-digit',

@@ -1,4 +1,4 @@
-import type { DPCalendarConfig } from '../../vue-datepicker/types'
+import type { DPCalendarConfig } from '../types'
 import { daysInMonth, getDay, newDate } from './date'
 
 const NUMBER_OF_STATIC_CALENDAR_DAYS = 42

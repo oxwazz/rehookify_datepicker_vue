@@ -1,4 +1,4 @@
-import type { DPDatesConfig } from '../../vue-datepicker/types'
+import type { DPDatesConfig } from '../types'
 import { isRange } from './config'
 import { addAndSortAsc, getCleanDate } from './date'
 import { includeDate, isSame } from './predicates'

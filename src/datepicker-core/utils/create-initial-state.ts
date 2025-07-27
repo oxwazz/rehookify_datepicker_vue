@@ -1,4 +1,4 @@
-import type { DPConfig, DPReducerState } from '../../vue-datepicker/types'
+import type { DPConfig, DPReducerState } from '../types'
 import { getCleanDate, getDateParts, newDate } from './date'
 import { getCalendarStartDate } from './get-calendar-start-date'
 import { getCurrentYearPosition } from './get-current-year-position'

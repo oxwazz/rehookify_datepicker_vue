@@ -3,7 +3,7 @@ import type {
   DPPropsGetterConfig,
   DPUseDays,
   DPUseDaysPropGetters,
-} from './types'
+} from '../datepicker-core/types'
 import { computed } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { isRange } from '../datepicker-core/utils/config'

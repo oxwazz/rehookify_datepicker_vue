@@ -1,5 +1,5 @@
 import type { App, InjectionKey, Plugin, Ref } from 'vue'
-import type { DPReducerState } from './types'
+import type { DPReducerState } from '../datepicker-core/types'
 import { ref } from 'vue'
 
 // Define proper types for provided values

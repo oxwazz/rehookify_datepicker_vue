@@ -1,4 +1,4 @@
-import type { DPOffsetValue, DPStateRef } from '../../vue-datepicker/types'
+import type { DPOffsetValue, DPStateRef } from '../types'
 import { addToDate, subtractFromDate } from './date'
 import { isSame, maxDateAndAfter, minDateAndBefore } from './predicates'
 

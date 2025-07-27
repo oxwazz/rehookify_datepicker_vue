@@ -1,4 +1,4 @@
-import type { DPCalendar, DPConfig } from '../../vue-datepicker/types'
+import type { DPCalendar, DPConfig } from '../types'
 import { toLocaleDateString } from './date'
 
 export function createWeekdays({ days }: DPCalendar, { locale: { locale, weekday } }: DPConfig): string[] {

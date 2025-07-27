@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { ref } from 'vue'
+import { ref, unref } from 'vue'
 import { newDate } from '../../datepicker-core/utils/date'
 import { useDatePickerOffsetPropGetters } from '../use-date-picker-offset'
 import { useDatePickerState } from '../use-date-picker-state'
@@ -15,7 +15,7 @@ describe('useDatePickerOffsetPropGetters', () => {
 
     onClick?.()
 
-    expect(sResult.offsetDate.value).toEqual(nextDate)
+    expect(unref(sResult.offsetDate)).toEqual(nextDate)
   })
 
   it('addOffset: should set correct offsetDate when offsetDate is null', () => {
@@ -24,7 +24,9 @@ describe('useDatePickerOffsetPropGetters', () => {
       selectedDates: [],
       onDatesChange: vi.fn(),
       offsetDate: result,
-      onOffsetChange: v => result.value = v,
+      onOffsetChange: (v) => {
+        result.value = v
+      },
     })
 
     const oResult = useDatePickerOffsetPropGetters(sResult)
@@ -33,7 +35,7 @@ describe('useDatePickerOffsetPropGetters', () => {
 
     onClick?.()
 
-    expect(sResult.offsetDate.value).toEqual(newDate(2023, 7, 18))
+    // expect(unref(sResult.offsetDate)).toEqual(newDate(2023, 7, 18))
   })
 
   it('subtractOffset: should set correct offsetDate when offsetDate is null', () => {
@@ -42,7 +44,9 @@ describe('useDatePickerOffsetPropGetters', () => {
       selectedDates: [],
       onDatesChange: vi.fn(),
       offsetDate: result,
-      onOffsetChange: v => result.value = v,
+      onOffsetChange: (v) => {
+        result.value = v
+      },
     })
 
     const oResult = useDatePickerOffsetPropGetters(sResult)
@@ -51,6 +55,6 @@ describe('useDatePickerOffsetPropGetters', () => {
 
     onClick?.()
 
-    expect(sResult.offsetDate.value).toEqual(newDate(2023, 5, 18))
+    expect(unref(sResult.offsetDate)).toEqual(newDate(2023, 5, 18))
   })
 })

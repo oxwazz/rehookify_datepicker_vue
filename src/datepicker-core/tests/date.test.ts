@@ -1,4 +1,4 @@
-import type { DPLocaleConfig } from '../../vue-datepicker/types'
+import type { DPLocaleConfig } from '../types'
 
 import { describe, expect, it } from 'vitest'
 import { ALTERNATIVE_LOCALE_CONFIG } from '../../vue-datepicker/mocks/locale'

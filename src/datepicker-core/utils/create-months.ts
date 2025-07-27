@@ -1,4 +1,4 @@
-import type { DPDatesConfig, DPLocaleConfig, DPMonth } from '../../vue-datepicker/types'
+import type { DPDatesConfig, DPLocaleConfig, DPMonth } from '../types'
 import { daysInMonth, formatMonthName, getDateParts, newDate } from './date'
 import {
   isAfterMaxMonth,

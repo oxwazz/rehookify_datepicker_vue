@@ -3,7 +3,7 @@ import type {
   DPDateParts,
   DPLocaleConfig,
   DPTimeLimit,
-} from '../../vue-datepicker/types'
+} from '../types'
 
 // Year and Month is a minimum required arguments for creating a date
 // == null is intentional to check also for undefined

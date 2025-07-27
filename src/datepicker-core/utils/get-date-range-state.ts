@@ -1,4 +1,4 @@
-import type { DPDatesMode, DPDayRange } from '../../vue-datepicker/types'
+import type { DPDatesMode, DPDayRange } from '../types'
 import { isRange } from './config'
 import { getCleanDate } from './date'
 import { isBefore, isBetween, isSame } from './predicates'

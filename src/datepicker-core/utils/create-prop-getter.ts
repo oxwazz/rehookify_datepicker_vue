@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'happy-dom'
-import type { DPPropGetter, DPPropsGetterConfig } from '../../vue-datepicker/types'
+import type { DPPropGetter, DPPropsGetterConfig } from '../types'
 
 export function createPropGetter(isDisabled: boolean, action: (evt?: MouseEvent) => void, props: DPPropsGetterConfig = {}, selected = false): DPPropGetter {
   return {

@@ -1,4 +1,4 @@
-import type { DPDatesConfig, DPYear, DPYearsConfig } from '../../vue-datepicker/types'
+import type { DPDatesConfig, DPYear, DPYearsConfig } from '../types'
 import { getDateParts, newDate } from './date'
 import { isAfterMaxYear, isBeforeMinYear } from './predicates'
 

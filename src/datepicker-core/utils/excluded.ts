@@ -1,4 +1,4 @@
-import type { DPDayInteger, DPExcludeConfig } from '../../vue-datepicker/types'
+import type { DPDayInteger, DPExcludeConfig } from '../types'
 import { getDateParts } from './date'
 
 export function isExcludedDay(d: number, eDays?: DPDayInteger[]): boolean {
