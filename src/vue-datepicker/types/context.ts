@@ -1,7 +1,7 @@
 import type { Slot } from 'vue'
 
-import type { DPUseDatePicker } from '../../vue-datepicker/types/hooks'
-import type { DPUserConfig } from './config'
+import type { DPUserConfig } from '../../datepicker-core/types/config'
+import type { DPUseDatePicker } from './hooks'
 
 export type DatePickerContextValue = ReturnType<DPUseDatePicker>
 

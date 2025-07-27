@@ -1,10 +1,10 @@
 import type {
   DPPropsGetterConfig,
-  DPUseYears,
-  DPUseYearsPropGetters,
+  DPState,
   DPYear,
 } from '../datepicker-core/types'
-import { computed, toValue } from 'vue'
+import type { DPUseYears, DPUseYearsPropGetters } from './types'
+import { computed, toValue, unref } from 'vue'
 import { callAll, skipAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { createPropGetter } from '../datepicker-core/utils/create-prop-getter'
 import { createYears } from '../datepicker-core/utils/create-years'
@@ -38,16 +38,23 @@ export const useYearsPropGetters: DPUseYearsPropGetters = (dpState) => {
   const yearButton = (
     { $date, disabled, selected, active }: DPYear,
     { onClick, disabled: disabledProps, ...rest }: DPPropsGetterConfig = {},
-  ) =>
-    createPropGetter(
+  ) => {
+    const dpState_: DPState = {
+      ...dpState,
+      state: unref(dpState.state),
+      offsetDate: unref(dpState.offsetDate),
+      dispatch: v => dpState.dispatch.value.offsetDate = v,
+    }
+    return createPropGetter(
       !!disabledProps || disabled,
-      evt => callAll(onClick, skipFirst(setDPOffset(dpState)))(evt, $date),
+      evt => callAll(onClick, skipFirst(setDPOffset(dpState_)))(evt, $date),
       {
         ...rest,
         tabIndex: active ? 0 : -1,
       },
       selected,
     )
+  }
 
   const nextYearsButton = ({ onClick, disabled, ...rest }: DPPropsGetterConfig = {}) => {
     const endYearDate = newDate(state.value.offsetYear + toValue(numberOfYears) - 1, M, D)

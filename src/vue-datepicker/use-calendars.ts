@@ -1,10 +1,11 @@
-import type { DPUseCalendars } from '../datepicker-core/types'
+import type { DPUseCalendars } from './types/hooks'
 import { computed, toValue } from 'vue'
 import { createCalendars } from '../datepicker-core/utils/create-calendars'
 import { createWeekdays } from '../datepicker-core/utils/create-weekdays'
 
 export const useCalendars: DPUseCalendars = (state) => {
   const calendars = createCalendars({
+    dispatch: () => {},
     selectedDates: state.selectedDates,
     state: {
       offsetDate: state.state.value.offsetDate,

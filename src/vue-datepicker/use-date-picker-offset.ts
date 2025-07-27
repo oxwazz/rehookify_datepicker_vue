@@ -1,10 +1,10 @@
 import type {
   DPOffsetValue,
   DPPropsGetterConfig,
-  DPUseDatePickerOffsetPropGetters,
+  DPState,
 } from '../datepicker-core/types'
-
-import { toValue } from 'vue'
+import type { DPUseDatePickerOffsetPropGetters } from './types'
+import { toValue, unref } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { createPropGetter } from '../datepicker-core/utils/create-prop-getter'
 import {
@@ -20,6 +20,13 @@ export const useDatePickerOffsetPropGetters: DPUseDatePickerOffsetPropGetters
       config: { dates },
     } = state
     const { minDate, maxDate } = dates
+
+    const state_: DPState = {
+      ...state,
+      state: unref(state.state),
+      offsetDate: unref(state.offsetDate),
+      dispatch: v => state.dispatch.value.offsetDate = v,
+    }
 
     const addOffset = (
       offsetValue: DPOffsetValue,
@@ -37,7 +44,7 @@ export const useDatePickerOffsetPropGetters: DPUseDatePickerOffsetPropGetters
       return createPropGetter(
         isDisabled,
         evt =>
-          callAll(onClick, skipFirst(setDPOffset(state)))(evt, nextDate),
+          callAll(onClick, skipFirst(setDPOffset(state_)))(evt, nextDate),
         rest,
       )
     }
@@ -64,7 +71,7 @@ export const useDatePickerOffsetPropGetters: DPUseDatePickerOffsetPropGetters
       return createPropGetter(
         isDisabled,
         evt =>
-          callAll(onClick, skipFirst(setDPOffset(state)))(evt, nextDate),
+          callAll(onClick, skipFirst(setDPOffset(state_)))(evt, nextDate),
         rest,
       )
     }
@@ -77,7 +84,7 @@ export const useDatePickerOffsetPropGetters: DPUseDatePickerOffsetPropGetters
 
       return createPropGetter(
         isDisabled,
-        evt => callAll(onClick, skipFirst(setDPOffset(state)))(evt, d),
+        evt => callAll(onClick, skipFirst(setDPOffset(state_)))(evt, d),
         rest,
       )
     }

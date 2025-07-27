@@ -1,9 +1,8 @@
 import type {
   DPPropsGetterConfig,
   DPTime,
-  DPUseTime,
-  DPUseTimePropGetter,
 } from '../datepicker-core/types'
+import type { DPUseTime, DPUseTimePropGetter } from './types'
 import { computed } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { createPropGetter } from '../datepicker-core/utils/create-prop-getter'

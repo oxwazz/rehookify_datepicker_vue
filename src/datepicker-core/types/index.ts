@@ -1,7 +1,5 @@
-export * from '../../vue-datepicker/types/hooks'
 export * from './calendar'
 export * from './config'
-export * from './context'
 export * from './date'
 export * from './day'
 export * from './month'

@@ -13,6 +13,7 @@ describe('useCalendars', () => {
     const result = useCalendars(stateResult)
 
     const calendars = createCalendars({
+      dispatch: () => {},
       selectedDates: stateResult.selectedDates,
       offsetDate: unref(stateResult.offsetDate),
       state: {

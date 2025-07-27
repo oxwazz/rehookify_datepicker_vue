@@ -1,3 +1,4 @@
+import type { DPState } from '../../datepicker-core/types'
 import { describe, expect, it, vi } from 'vitest'
 import { ref, unref } from 'vue'
 import { getCleanDate, newDate } from '../../datepicker-core/utils/date'
@@ -75,7 +76,13 @@ describe('useDatePickerState', () => {
         onDatesChange: vi.fn(),
       })
 
-      setDPOffset(result)(d)
+      const result_: DPState = {
+        ...result,
+        state: unref(result.state),
+        offsetDate: unref(result.offsetDate),
+        dispatch: v => result.dispatch.value.offsetDate = v,
+      }
+      setDPOffset(result_)(d)
       expect(unref(result.offsetDate)).toEqual(d)
     })
 
@@ -94,7 +101,13 @@ describe('useDatePickerState', () => {
 
       expect(result.offsetDate.value).toEqual(d1)
 
-      setDPOffset(result)(d)
+      const result_: DPState = {
+        ...result,
+        state: unref(result.state),
+        offsetDate: unref(result.offsetDate),
+        dispatch: v => result.dispatch.value.offsetDate = v,
+      }
+      setDPOffset(result_)(d)
 
       expect(offsetResult.value).toEqual(d)
     })

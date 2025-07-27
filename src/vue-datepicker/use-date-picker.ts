@@ -1,4 +1,4 @@
-import type { DPUseDatePicker } from '../datepicker-core/types'
+import type { DPUseDatePicker } from './types'
 import { computed, toValue } from 'vue'
 import { useCalendars } from './use-calendars'
 import { useDatePickerOffsetPropGetters } from './use-date-picker-offset'

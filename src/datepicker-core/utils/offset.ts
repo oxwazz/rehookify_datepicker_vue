@@ -1,12 +1,12 @@
-import type { DPOffsetValue, DPStateRef } from '../types'
+import type { DPOffsetValue, DPState } from '../types'
 import { addToDate, subtractFromDate } from './date'
 import { isSame, maxDateAndAfter, minDateAndBefore } from './predicates'
 
-export function setDPOffset({ dispatch, config: { onOffsetChange, offsetDate } }: DPStateRef) {
+export function setDPOffset({ dispatch, config: { onOffsetChange, offsetDate } }: DPState) {
   return (d: Date): void => {
     // Prevent to call reducer action if offsetDate is external
     if (!onOffsetChange && !offsetDate)
-      dispatch.value.offsetDate = d
+      dispatch(d)
     if (onOffsetChange)
       onOffsetChange(d)
   }

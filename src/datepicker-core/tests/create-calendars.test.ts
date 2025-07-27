@@ -15,6 +15,7 @@ describe('createCalendars', () => {
     const state = createInitialState(config)
 
     const testCalendar = createCalendars({
+      dispatch: () => {},
       selectedDates: [now],
       state,
       config,
@@ -40,6 +41,7 @@ describe('createCalendars', () => {
     const state = createInitialState(config)
 
     const testCalendar = createCalendars({
+      dispatch: () => {},
       selectedDates: [offsetDate],
       state,
       config,
@@ -63,6 +65,7 @@ describe('createCalendars', () => {
     const state = createInitialState(config)
 
     const [testCalendar] = createCalendars({
+      dispatch: () => {},
       selectedDates: [offsetDate],
       state,
       config,

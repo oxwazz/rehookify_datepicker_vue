@@ -15,6 +15,7 @@ const config = createConfig({
 const state = createInitialState(config)
 
 const TEST_CALENDAR = createCalendars({
+  dispatch: () => {},
   selectedDates: [now],
   state,
   config,

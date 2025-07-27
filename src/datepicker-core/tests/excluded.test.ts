@@ -20,6 +20,7 @@ describe('isExcludedDay', () => {
 
     const state = createInitialState(config)
     const [calendar] = createCalendars({
+      dispatch: () => {},
       selectedDates: [] as Date[],
       state,
       config,
@@ -48,6 +49,7 @@ describe('isExcludedDate', () => {
 
     const state = createInitialState(config)
     const [calendar] = createCalendars({
+      dispatch: () => {},
       selectedDates: [] as Date[],
       state,
       config,

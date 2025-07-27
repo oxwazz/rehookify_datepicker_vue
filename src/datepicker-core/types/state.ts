@@ -1,4 +1,3 @@
-import type { ComputedRef, Ref } from 'vue'
 import type { DPConfig } from './config'
 
 export interface DPReducerState {
@@ -35,16 +34,9 @@ export type DPReducerAction
     | DPSetRangeEndAction
 
 export interface DPState {
+  dispatch: (d: Date) => void
   state: DPReducerState
   selectedDates: Date[]
   offsetDate: Date
-  config: DPConfig
-}
-
-export interface DPStateRef {
-  dispatch: Ref<DPReducerState>
-  state: Readonly<Ref<DPReducerState>>
-  selectedDates: Date[]
-  offsetDate: ComputedRef<Date>
   config: DPConfig
 }

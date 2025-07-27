@@ -1,9 +1,8 @@
 import type {
   DPDay,
   DPPropsGetterConfig,
-  DPUseDays,
-  DPUseDaysPropGetters,
 } from '../datepicker-core/types'
+import type { DPUseDays, DPUseDaysPropGetters } from './types'
 import { computed } from 'vue'
 import { callAll, skipFirst } from '../datepicker-core/utils/call-all'
 import { isRange } from '../datepicker-core/utils/config'
