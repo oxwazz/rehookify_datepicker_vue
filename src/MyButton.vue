@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useDatePicker } from './use-date-picker'
+import { useDatePicker } from './vue-datepicker/use-date-picker'
 
 const { type } = defineProps<{
   type?: 'primary'
